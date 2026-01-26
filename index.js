@@ -75,7 +75,6 @@ server.post("/api/reset", (request, response) => {
 
 server.use("/api", router);
 
-const port = process.env.PORT ?? 3000;
-server.listen(port, () => {
-  console.log(`Starter APIet.\n\nPort: ${port}\nTemplate: ${process.env.TEMPLATE}\nAPI-nøkkel: ${process.env.API_KEY}.`);
+server.listen(3000, () => {
+  console.log(`Starter APIet.\n\nPort: 3000\nTemplate: ${process.env.TEMPLATE}\nAPI-nøkkel: ${process.env.API_KEY}.`);
 });
