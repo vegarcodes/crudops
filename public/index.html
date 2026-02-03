@@ -1,13 +1,184 @@
 <!doctype html>
 <html lang="no">
-  <head>
-    <meta charset="utf-8">
-    <title>CrudOps</title>
-  </head>
-  <body>
-    <h1>CrudOps</h1>
-    <p>
-      Her kan vi kanskje lage og legge dokumentasjon på endepunkter? Må vi ha forskjellig fil per kundecase?
-    </p>
-  </body>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/style.css">
+	<title>CrudOps</title>
+</head>
+
+<body>
+	<main>
+		<h1>CrudOps</h1>
+		<p class="lead">
+			CrudOps er APIet vi skal bruke i Operasjonell frontendutvikling ved Gokstad Akademiet, våren 2026. Det fungerer på
+			tvers av kundecaser, og er laget for at dataene dere brukes skal kunne endres i henhold til de kravene dere har
+			for deres egen løsning.
+		</p>
+
+		<h2>Komme i gang</h2>
+		<p>
+			Når dere skal begynne med løsningsutvikling, må dere ta en kopi av dette repositoryet som dere kan endre innad i
+			gruppa. Den enkleste måten å gjøre dette på er å ta en fork i GitHub; dette kopierer koden inn i et eget
+			repository under gruppas kontroll. Gå til <a href="https://github.com/vegarcodes/crudops"
+				target="_blank">GitHub-siden til CrudOps</a> og trykk deretter på <strong>Fork-knappen øverst på siden.</strong>
+			Følg anvisningene deretter.
+		</p>
+
+		<p>
+			Dere må ha Node.js og npm installert for å kunne kjøre i gang koden til APIet. Gå til <a
+				href="https://nodejs.org/en" target="_blank">Node.js sin nettside</a> og følg bruksanvisningen for å installere
+			på ditt operativsystem. Når du har installert og verifisert at du får kjørt <code>node -v</code> og
+			<code>npm -v</code> i terminalen din, er du klar til å sette opp CrudOps.
+		</p>
+
+		<ol>
+			<li>Start med å klone prosjektet. <strong>Husk å klone det repositoryet du har forket!</strong></li>
+			<li>Naviger deg til riktig mappe i terminalen og kjør kommandoen <code>npm install</code> for å installere
+				avhengigheter.</li>
+			<li>Kopier filen <code>.env.example</code> og endre navn på kopien så den heter <code>.env</code> — det er her du
+				skal legge miljøvariablene dine. Åpne filen i editoren.</li>
+			<li>Start med å legge inn navn på riktig template. Hvis gruppa skal jobbe med Gatherly-kundecaset, skal det stå
+				<code>TEMPLATE=gatherly.json</code> i fila, for eksempel.</li>
+			<li>Legg så inn ønsket API-nøkkel. Denne skal brukes når dere oppretter data i APIet. Hvis nøkkelen skal være
+				"12345", skal det stå <code>API_KEY=12345</code> i fila.</li>
+			<li>Kjør kommandoen <code>npm start</code> for å starte APIet. Dersom alt er riktig satt opp og installert, kjører
+				applikasjonen nå på port 3000 og du er klar til å bruke APIet.</li>
+		</ol>
+
+		<h2>API-dokumentasjon</h2>
+		<p>
+			Hvilke ressurser som er tilgjengelige i APIet kommer an på hvilket kundecase dere har valgt. Dere må studere
+			JSON-filen for å se hvilke <strong>ressurser</strong> dere har tilgang til. I utgangspunktet har kundecasene
+			tilgang til følgende ressurser:
+		</p>
+
+		<h3>Gaterhly</h3>
+		<ul>
+			<li><code>users</code></li>
+			<li><code>meetups</code></li>
+			<li><code>posts</code></li>
+		</ul>
+
+		<h3>Stay</h3>
+		<ul>
+			<li><code>users</code></li>
+			<li><code>rooms</code></li>
+			<li><code>bookings</code></li>
+		</ul>
+
+		<h3>Potepass</h3>
+		<ul>
+			<li><code>users</code></li>
+			<li><code>petsitters</code></li>
+			<li><code>bookings</code></li>
+		</ul>
+
+		<p>
+			I tabellen under har vi dokumentert de ulike endepunktene APIet lager basert på JSON-strukturen. Når vi bruker et
+			kodenavn med kolon foran, for eksempel <code>:resource</code> eller <code>:id</code>, skal du bytte ut disse med
+			den faktiske informasjonen du trenger. Eksempel: hvis URLen er <code>/api/:resource/:id</code>, og du ønsker å
+			hente elementet med id nummer 1 fra users-arrayet, blir den ferdige URLen <code>/api/users/1</code>.
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th>HTTP-verb</th>
+					<th>URL</th>
+					<th>Beskrivelse</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>GET</code></td>
+					<td><code>/api/:resource</code></td>
+					<td>Henter alle elementer av den angitte ressurstypen. Kan returnere et tomt array om ingen elementer finnes,
+						eller 404 om ressursen ikke finnes.</td>
+				</tr>
+				<tr>
+					<td><code>GET</code></td>
+					<td><code>/api/:resource/:id</code></td>
+					<td>Henter et bestemt element av den angitte ressurstypen basert på id. Returnerer 404 om et element med den
+						angitte iden ikke finnes.</td>
+				</tr>
+				<tr>
+					<td><code>POST</code></td>
+					<td><code>/api/:resource</code></td>
+					<td>Oppretter et nytt element av angitt type ressurs. Request headers skal inneholde API-nøkkel. Request body
+						skal inneholde en JSON-string med det nye objektet. Du skal ikke angi id, APIet oppretter denne automatisk.
+						Returnerer 401 og en feilmelding om du ikke har lagt ved riktig API-nøkkel i request headers. Returnerer 200
+						og en kopi av det opprettede objektet om forespørselen ble godkjent.</td>
+				</tr>
+				<tr>
+					<td><code>PUT</code></td>
+					<td><code>/api/:resource/:id</code></td>
+					<td>Oppdaterer angitt ressurs basert på id. Request headers skal inneholde API-nøkkel. Request body skal
+						inneholde en JSON-string med det nye objektet, og APIet erstatter det gamle objektet med det nye. Returnerer
+						401 og en feilmelding om du ikke har lagt ved riktig API-nøkkel i request headers. Returnerer 200 og en kopi
+						av det opprettede objektet om forespørselen ble godkjent. Returnerer 404 om objektet ikke finnes.</td>
+				</tr>
+				<tr>
+					<td><code>PATCH</code></td>
+					<td><code>/api/:resource/:id</code></td>
+					<td>Oppdaterer angitt ressurs basert på id. Request headers skal inneholde API-nøkkel. Request body skal
+						inneholde en JSON-string med det nye objektet, og APIet oppdaterer bare feltene etter behov fremfor å
+						erstatte hele objektet. Returnerer 401 og en feilmelding om du ikke har lagt ved riktig API-nøkkel i request
+						headers. Returnerer 200 og en kopi av det opprettede objektet om forespørselen ble godkjent. Returnerer 404
+						om objektet ikke finnes.</td>
+				</tr>
+				<tr>
+					<td><code>PATCH</code></td>
+					<td><code>/api/:resource/:id</code></td>
+					<td>Sletter angitt ressurs basert på id. Request headers skal inneholde API-nøkkel. Returnerer 200 dersom
+						slettingen ble fullført. Returnerer 401 og en feilmelding om du ikke har lagt ved riktig API-nøkkel i
+						request headers. Returnerer 404 om objektet ikke finnes.</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>
+			I tillegg finnes det noen spesielle endepunkter som kan være nyttige i utviklingsløpet og for testing av
+			applikasjonen dere lager:
+		</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th>HTTP-verb</th>
+					<th>URL</th>
+					<th>Beskrivelse</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>POST</code></td>
+					<td><code>/api/reset</code></td>
+					<td>Sletter alle data i APIet og gjenoppretter templaten. Dette er nyttig om templaten har endret seg eller
+						dere får feil med dataene som ligger i APIet. Request headers skal inneholde API-nøkkel. Returnerer 200
+						dersom gjenopprettingen ble fullført. Returnerer 401 dersom angitt API-nøkkel er feil eller mangler i
+						headers.</td>
+				</tr>
+				<tr>
+					<td>Alle</td>
+					<td><code>/api/status/:code</code></td>
+					<td>Returnerer en respons med den angitte statuskoden. Nyttig for debugging av applikasjonen der du trenger å sjekke hvordan frontenden reagerer på en bestemt statuskode, for eksempel 404 eller 500. API-nøkkel må angis i request headers for alle HTTP-verb annet enn <code>GET</code>.</td>
+				</tr>
+				<tr>
+					<td>Alle</td>
+					<td><code>/api/delay/:ms</code></td>
+					<td>Sender en respons etter angitt antall millisekunder. Dette er nyttig for å teste frontenden når APIet bruker lang tid på å svare, for eksempel til å teste spinnere/loadere. API-nøkkel må angis i request headers for alle HTTP-verb annet enn <code>GET</code>.</td>
+				</tr>
+				<tr>
+					<td><code>GET</code></td>
+					<td><code>/api/db</code></td>
+					<td>Returnerer alle data som ligger i APIet som ett stort JSON-objekt. Nyttig for å få oversikt over hvordan datastrukturen ser ut og hvilke data som ligger i APIet.</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+
+</body>
+
 </html>
