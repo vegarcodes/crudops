@@ -1,0 +1,80 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "age": 40,
+      "name": "Spøkelseskladden",
+      "address": "Skurkegata 123",
+      "description": "Spesialist i å sprenge pengeskap og luftballonger",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 2,
+      "age": 30,
+      "name": "Rikerud",
+      "address": "Gangsteralléen 234",
+      "description": "Spesialist i finanssvindel og alternativ romfart",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 3,
+      "age": 729,
+      "name": "Magica fra Tryll",
+      "address": "Vulkanveien 1",
+      "description": "Spesialist i magi, forkledninger og foffbomber",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Grunnleggende frontendutvikling",
+      "description": "Kom i gang med frontendutvikling! Vi lærer om HTML, CSS og JavaScript.",
+      "courseType": "full-time",
+      "grading": "Karakterskala A-F",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 2,
+      "name": "Backendutvikling, deltid",
+      "description": "Oppgrader backend-ferdighetene dine hos oss! Vi lærer om Node.js, ExpressJS og SQLite-databaser.",
+      "courseType": "part-time",
+      "grading": "Karakterskala A-F",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    }
+  ],
+  "grades": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "courseId": 1,
+      "grade": "A",
+      "feedback": "En framifrå prestasjon som virkelig viser hvor mye du har lært!",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "courseId": 1,
+      "grade": "C",
+      "feedback": "Du har kommet deg betraktelig siden du røk i fengsel for å ha stjålet lykkeskillingen, fortsett slik!",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 3,
+      "studentId": 3,
+      "courseId": 2,
+      "grade": "F",
+      "feedback": "Jeg tror ikke du helt forsto oppgaven — hensikten var å lage en applikasjon med Node.js og ExpressJS, ikke forhekse alle serverene i serverparken. Les oppgaveteksten nøye!",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    }
+  ]
+}
