@@ -14,6 +14,10 @@
           "age": 4,
           "allergies": [
             "kylling"
+          ],
+          "gender": [
+          "Tispe",
+          "Rakker"
           ]
         },
         {
