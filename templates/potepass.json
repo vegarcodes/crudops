@@ -6,32 +6,52 @@
       "password": "abc123",
       "email": "ola@example.com",
       "description": "Trenger hundepass i helger og ferier",
-      "dogs": [
-        {
-          "id": 1,
-          "name": "Bella",
-          "breed": "Golden Retriever",
-          "age": 4,
-          "allergies": [
-            "kylling"
-          ],
-          "gender": [
-          "Tispe",
-          "Rakker"
-          ]
-        },
-        {
-          "id": 2,
-          "name": "Max",
-          "breed": "Labrador",
-          "age": 2,
-          "allergies": []
-        }
-      ],
       "created": "2025-09-01T10:30:00",
       "updated": "2025-09-10T14:20:00"
     }
   ],
+  "dogs": [
+        {
+          "id": 101,
+          "name": "Bella",
+          "weight": 19,
+          "age": 4,
+          "breed": "Cockerspaniel",
+          "allergies":"Fjærkre",
+          "gender":"Her",
+          "image": "https://pcdn.bellfordev.pro/image/cache/catalog/Blog/Blog-Pictures/cocker-spaniel-w690-h690.jpg"
+        },
+        {
+          "id": 102,
+          "name": "Max",
+          "weight": 27,
+          "age": 6,
+          "breed": "Labrador",
+          "allergies":"Ingen",
+          "gender":"Her",
+          "image": ""
+        },
+        {
+          "id": 103,
+          "name": "Harley",
+          "weight": 15,
+          "age": 4,
+          "breed": "Engelsk staff",
+          "allergies":"Hvete",
+          "gender":"Him",
+          "image": "https://www.nkk.no/getfile.php/136684-1486108244/bilder/rasebilder/staffordshire-bull-terrier/staffordshire-bull-terrier-vibeke-brath-liten-jpg-optimized-original.jpg"
+        },
+        {
+          "id": 104,
+          "name": "Mira",
+          "weight": 42,
+          "age": 9,
+          "breed": "Irsk ulvehund",
+          "allergies":"Epler",
+          "gender":"Her",
+          "image": "https://vetgruppen.dk/wp-content/themes/yootheme/cache/bb/irsk-ulvehund-hunderace-bb1ff7d7.jpeg"
+        }
+      ],
   "petSitters": [
     {
       "id": 1,
