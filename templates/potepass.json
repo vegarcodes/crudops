@@ -2,25 +2,10 @@
   "users": [
     {
       "id": 1,
-      "userName": "Ola Nordmann",
+      "userName": "Knut Halvorsen",
       "password": "abc123",
-      "email": "ola@example.com",
-      "description": "Trenger hundepass i helger og ferier",
-      "created": "2025-09-01T10:30:00",
-      "updated": "2025-09-10T14:20:00"
-    }
-  ],
-  "dogs": [
-        {
-          "id": 101,
-          "name": "Bella",
-          "weight": 19,
-          "age": 4,
-          "breed": "Cockerspaniel",
-          "allergies":"Fjærkre",
-          "gender":"Her",
-          "image": "https://pcdn.bellfordev.pro/image/cache/catalog/Blog/Blog-Pictures/cocker-spaniel-w690-h690.jpg"
-        },
+      "email": "knut@example.com",
+      "dogs": [
         {
           "id": 102,
           "name": "Max",
@@ -30,7 +15,18 @@
           "allergies":"Ingen",
           "gender":"Her",
           "image": ""
-        },
+        }
+      ],
+      "description": "Trenger hundepass i helger og ferier",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 2,
+      "userName": "Sondre Larsen",
+      "password": "luftetur",
+      "email": "sonlar@example.com",
+      "dogs": [
         {
           "id": 103,
           "name": "Harley",
@@ -40,7 +36,18 @@
           "allergies":"Hvete",
           "gender":"Him",
           "image": "https://www.nkk.no/getfile.php/136684-1486108244/bilder/rasebilder/staffordshire-bull-terrier/staffordshire-bull-terrier-vibeke-brath-liten-jpg-optimized-original.jpg"
-        },
+        }
+        ],
+      "description": "Trenger hundepass en dag i uka",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00" 
+    },
+   { 
+    "id": 3,
+      "userName": "Jan Johansen",
+      "password": "hund123",
+      "email": "janjohansen@example.com",
+      "dogs": [
         {
           "id": 104,
           "name": "Mira",
@@ -51,7 +58,22 @@
           "gender":"Her",
           "image": "https://vetgruppen.dk/wp-content/themes/yootheme/cache/bb/irsk-ulvehund-hunderace-bb1ff7d7.jpeg"
         }
+      ,
+      {
+          "id": 105,
+          "name": "Bella",
+          "weight": 19,
+          "age": 4,
+          "breed": "Cockerspaniel",
+          "allergies":"Fjærkre",
+          "gender":"Her",
+          "image": "https://pcdn.bellfordev.pro/image/cache/catalog/Blog/Blog-Pictures/cocker-spaniel-w690-h690.jpg"
+      }
       ],
+        "description": "Trenger hundepass en uke i måneden",
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00" }
+    ],
   "petSitters": [
     {
       "id": 1,
