@@ -4,6 +4,29 @@
       "id": 1,
       "userName": "Ola Nordmann",
       "description": "Frontend-utvikler som liker tech-meetups",
+      "profileColor": "#d7b0ff",
+      "joinedMeetups": [1, 2, 3],
+      "likedPosts": [1, 2, 3],
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 2,
+      "userName": "Vegar Normann",
+      "description": "Frontend-utvikler og tech-entusiast",
+      "profileColor": "#d7b0ff",
+      "joinedMeetups": [3],
+      "likedPosts": [1],
+      "created": "2025-09-01T10:30:00",
+      "updated": "2025-09-10T14:20:00"
+    },
+    {
+      "id": 3,
+      "userName": "Anders Andersen",
+      "description": "Jeg liker MTG og Fortnite",
+      "profileColor": "#d7b0ff",
+      "joinedMeetups": [1, 2],
+      "likedPosts": [2, 3],
       "created": "2025-09-01T10:30:00",
       "updated": "2025-09-10T14:20:00"
     }
@@ -11,10 +34,17 @@
   "meetups": [
     {
       "id": 1,
+      "userId": 1,
       "name": "Frontend Meetup Oslo",
       "description": "Uformell meetup for frontend-utviklere",
-      "location": "Oslo",
-      "date": "2026-02-15",
+      "location": "Rebel Skråplanet",
+      "address": "Universitetsgata 2",
+      "zipCode": "0164",
+      "city": "Oslo",
+      "startDate": "2026-02-15",
+      "endDate": "2026-02-15",
+      "startTime": "16:00",
+      "endTime": "20:00",
       "tags": [
         "frontend",
         "nybegynner",
@@ -22,6 +52,55 @@
         "universell utforming",
         "gratis"
       ],
+      "price": 0,
+      "vipps": null,
+      "capacity": 200,
+      "participants": [1, 3],
+      "image": "",
+      "created": "2025-12-01T09:00:00",
+      "updated": "2025-12-01T09:00:00"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "name": "Teknologimesse Oslo",
+      "description": "Teknologimesse i Oslo-hallen. Det blir flere bedrifter som kommer for å vise frem hvordan de bruker og utvikler teknologien deres. Det blir også holdt foredrag av Kari Nilsen",
+      "location": "Clarion Hotel The Hub",
+      "address": "Biskop Gunnerus' gate 3",
+      "zipCode": "0155",
+      "city": "Oslo",
+      "startDate": "2026-03-04",
+      "endDate": "2026-03-04",
+      "startTime": "12:00",
+      "endTime": "17:00",
+      "tags": ["IT", "teknologi", "messe", "foredrag"],
+      "price": 150,
+      "vipps": "918713",
+      "capacity": 1850,
+      "participants": [1, 3],
+      "image": "",
+      "created": "2025-12-01T09:00:00",
+      "updated": "2025-12-01T09:00:00"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "name": "Magic: The Gathering x TMNT Prerelease",
+      "description": "Bli med oss på forhåndslanseringen av Magic: The Gathering x Teenage Mutant Ninja Turtles crossoveren!",
+      "location": "Dragons Nest Gaming",
+      "address": "Leedalsgata 1",
+      "zipCode": "4823",
+      "city": "Stavanger",
+      "startDate": "2026-02-28",
+      "endDate": "2026-02-28",
+      "startTime": "18:00",
+      "endTime": "21:00",
+      "tags": ["Magic: The Gathering", "turnering", "Prerelease", "TMNT"],
+      "price": 550,
+      "vipps": "524038",
+      "capacity": 60,
+      "participants": [1, 2],
+      "image": "https://images.unsplash.com/photo-1696197819145-dbcf7e97cbdc?w=1400&q=80&auto=format",
       "created": "2025-12-01T09:00:00",
       "updated": "2025-12-01T09:00:00"
     }
@@ -33,20 +112,76 @@
       "userId": 1,
       "postName": "Gleder meg til meetupen!",
       "text": "På torsdag skal jeg på Frontend Meetup Oslo for å høre på Vegar Norman snakke om frontend. Jeg gleder meg veldig, siden han er mitt store idol. Håper vi sees!",
-      "likes": 5,
-      "dislikes": 0,
+      "likes": [1, 2],
+      "dislikes": [],
       "comments": [
         {
           "id": 1,
-          "userId": 1,
+          "userId": 3,
           "comment": "Dette blir bra!",
-          "created": "2026-01-10T12:00:00"
+          "created": "2026-01-10T12:00:00",
+          "updated": "2026-01-10T12:00:00"
         },
         {
           "id": 2,
           "userId": 2,
           "comment": "Ååå jeg vil også dra dit, Vegar er veldig dyktig!!",
-          "created": "2026-01-10T12:00:00"
+          "created": "2026-01-10T12:00:00",
+          "updated": "2026-01-11T11:00:00"
+        }
+      ],
+      "created": "2026-01-10T11:45:00",
+      "updated": "2026-01-10T11:45:00"
+    },
+    {
+      "id": 2,
+      "meetupId": 2,
+      "userId": 2,
+      "postName": "Gleder meg til messen!",
+      "text": "På torsdag skal jeg på teknologimessen. Jeg gleder meg veldig, siden elsker teknologi så mye. Håper vi sees!",
+      "likes": [3, 1],
+      "dislikes": [],
+      "comments": [
+        {
+          "id": 3,
+          "userId": 3,
+          "comment": "Dette blir bra!",
+          "created": "2026-01-10T12:00:00",
+          "updated": "2026-01-10T12:00:00"
+        },
+        {
+          "id": 4,
+          "userId": 1,
+          "comment": "Ååå jeg vil også dra dit, JEG ELSKER TEKNOLOGI!!",
+          "created": "2026-01-10T12:00:00",
+          "updated": "2026-01-11T11:00:00"
+        }
+      ],
+      "created": "2026-01-10T11:45:00",
+      "updated": "2026-01-10T11:45:00"
+    },
+    {
+      "id": 3,
+      "meetupId": 3,
+      "userId": 3,
+      "postName": "Gleder meg til prereleasen",
+      "text": "Jeg har samlet sammen mitt beste deck. Lykke til med å slå det",
+      "likes": [1, 3],
+      "dislikes": [2],
+      "comments": [
+        {
+          "id": 5,
+          "userId": 1,
+          "comment": "Ha, du tror 😂",
+          "created": "2026-01-10T12:00:00",
+          "updated": "2026-01-10T12:00:00"
+        },
+        {
+          "id": 6,
+          "userId": 2,
+          "comment": "Skal sååå knuse deg 🤜🤛",
+          "created": "2026-01-10T12:00:00",
+          "updated": "2026-01-11T11:00:00"
         }
       ],
       "created": "2026-01-10T11:45:00",
